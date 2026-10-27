@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>little things ♡</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a href="index.html">← back to the garden</a><span>little page #02</span></header><main class="sub"><p class="eyebrow">♡ little reminders ♡</p><h1>little things <em>♡</em></h1>
+<section class="notes cute-notes" aria-label="little reminders">
+<article tabindex="0"><b>🌷</b><h2>you're pretty</h2><span class="card-sparkle">✧･ﾟ</span></article>
+<article tabindex="0"><b>🧸</b><h2>you care a lot about your friends</h2><span class="card-sparkle">♡ ♡</span></article>
+<article tabindex="0"><b>🔋</b><h2>it's okay to recharge</h2><span class="card-sparkle">｡°✩</span></article>
+<article tabindex="0"><b>✨</b><h2>smart and cute is unfair</h2><span class="card-sparkle">(˶ᵔ ᵕ ᵔ˶)</span></article>
+</section><button id="noteBtn">tap for a tiny surprise ♡</button><p class="reply" id="noteReply" aria-live="polite"></p>
+<a class="buttonlink" href="letter.html">read a small note →</a></main>
+<script>
+const cards=[...document.querySelectorAll('.cute-notes article')];
+function flip(card){card.classList.toggle('flipped'); if(!card.dataset.original)card.dataset.original=card.querySelector('h2').textContent; card.querySelector('h2').textContent=card.classList.contains('flipped')?['♡ pretty, obviously ♡','your friends are lucky to have you','rest is allowed ☁️','brains and beauty?? unfair'][cards.indexOf(card)]:card.dataset.original;}
+cards.forEach(c=>{c.addEventListener('click',()=>flip(c));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip(c)}})});
+const notes=['( ˘͈ ᵕ ˘͈♡) you deserve a good day','૮ ˶ᵔ ᵕ ᵔ˶ ა tiny bear hug','ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧ you got this','(づ๑•ᴗ•๑)づ♡'];let n=0;document.querySelector('#noteBtn').onclick=()=>{document.querySelector('#noteReply').textContent=notes[n++%notes.length];};
+</script></body></html>

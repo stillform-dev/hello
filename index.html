@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>a tiny thing for you ♡</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><span>✿ a tiny corner of the internet</span><span>made with ♡</span></header>
+<main>
+  <div class="sun">☼</div><p class="eyebrow">hi hi</p>
+  <h1>hey, you <em>♡</em></h1>
+  <p class="intro">a few little things for you 🌷</p>
+  <div class="hero-art" aria-label="a bouquet of pink roses and a little teddy bear">
+    <div class="bouquet" aria-hidden="true">
+      <span class="rose r1">🌹</span><span class="rose r2">🌹</span><span class="rose r3">🌹</span>
+      <span class="rose r4">🌹</span><span class="rose r5">🌹</span><span class="rose r6">🌹</span>
+      <span class="leaf l1">❧</span><span class="leaf l2">❧</span><span class="wrap">♡</span><span class="ribbon">🎀</span>
+    </div>
+    <div class="teddy" id="teddy" role="button" tabindex="0" aria-label="tap the teddy bear">🧸<small>tap me</small></div>
+    <span class="float-heart h1">♡</span><span class="float-heart h2">♥</span><span class="spark s1">✦</span><span class="spark s2">✧</span>
+  </div>
+  <p class="prompt" id="teddyMsg">🌷</p>
+  <nav class="tiles">
+    <a href="bloom.html"><b>🌹</b><strong>rose bouquet</strong><small>make it bloom</small></a>
+    <a href="notes.html"><b>🧸</b><strong>little things</strong><small>tiny reminders</small></a>
+    <a href="letter.html"><b>💌</b><strong>a small note</strong><small>nothing too serious</small></a>
+    <a href="music.html"><b>🎧</b><strong>song break</strong><small>30 seconds of beabadoobee</small></a>
+    <a href="cinna.html"><b>🌷</b><strong>one last thing</strong><small>for you ♡</small></a>
+  </nav>
+  <p class="tiny"></p>
+</main>
+<footer></footer>
+<script>
+const teddy=document.querySelector('#teddy'), msg=document.querySelector('#teddyMsg');
+const lines=["🌹","🧸","♡","🌷"];
+let i=0; function cuddle(){msg.textContent=lines[i%lines.length];i++;teddy.classList.add('wiggle');setTimeout(()=>teddy.classList.remove('wiggle'),450)}
+teddy.addEventListener('click',cuddle);teddy.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();cuddle()}});
+</script>
+</body></html>

@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>song break ♡</title><link rel="stylesheet" href="style.css"></head>
+<body class="music-body"><div class="music-floaters" aria-hidden="true"><span>♫</span><span>♡</span><span>(˶ᵔ ᵕ ᵔ˶)</span><span>♪</span><span>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</span><span>♡</span><span>♬</span><span>(づ｡◕‿‿◕｡)づ</span><span>୨୧</span><span>♪</span><span>♡</span><span>₊˚⊹♡</span></div>
+<header><a href="index.html">← back to the garden</a><span>little page #04</span></header><main class="sub music-page"><p class="eyebrow">♡ a tiny song break ♡</p><h1>press play <em>♫</em></h1>
+<p class="intro">a little moment with “You're Here That's the Thing” by beabadoobee ♡</p>
+<div class="music-card song-card"><div class="music-art">🎧<span>🌷</span></div><div class="vinyl">♫</div><h2>You're Here That's the Thing</h2><p>beabadoobee</p><div class="song-doodles">(˶˃ ᵕ ˂˶) ♡ ♪ ♡ (˶ᵔ ᵕ ᵔ˶)</div>
+<div id="player-wrap"><div id="player"></div></div><button id="play" disabled>play 30 seconds ♡</button><p id="musicStatus" class="tiny" aria-live="polite">getting the song ready… ♡</p>
+<p class="music-disclaimer">if the play button doesn't work here, you can listen through the links below ♡</p><div class="listen-links"><a href="https://www.youtube.com/watch?v=eQAfnVbP6yk&list=RDeQAfnVbP6yk&start_radio=1" target="_blank" rel="noopener">listen on YouTube ↗</a><a href="https://open.spotify.com/search/You're%20Here%20That's%20the%20Thing%20beabadoobee" target="_blank" rel="noopener">find it on Spotify ↗</a></div>
+<p class="tiny lyrics-note">lyrics aren't displayed here, but the song links will take you to places you can listen along ♡</p></div>
+<a class="next" href="cinna.html">one last little thing ☁️ →</a></main>
+<script>
+let player=null,stopTimer=null,isReady=false;const playBtn=document.querySelector('#play'),status=document.querySelector('#musicStatus');
+function loadPlayer(){if(player||!window.YT||!YT.Player)return;player=new YT.Player('player',{height:'225',width:'300',videoId:'eQAfnVbP6yk',playerVars:{start:0,playsinline:1,rel:0},events:{onReady:()=>{isReady=true;playBtn.disabled=false;status.textContent='ready when you are ♡';},onStateChange:e=>{if(e.data===YT.PlayerState.PLAYING){clearTimeout(stopTimer);status.textContent='♪ playing… ♡';stopTimer=setTimeout(()=>{if(player){player.pauseVideo();status.textContent='your 30-second song moment is complete ♡';}},30000);}},onError:()=>{status.textContent='the embed did not work this time. try a listening link below ♡';}}});}
+window.onYouTubeIframeAPIReady=loadPlayer;const api=document.createElement('script');api.src='https://www.youtube.com/iframe_api';api.onerror=()=>status.textContent='could not load the player here. try a listening link below ♡';document.head.appendChild(api);
+playBtn.onclick=()=>{if(!isReady||!player){status.textContent='still loading… or use a listening link below ♡';return;}clearTimeout(stopTimer);player.seekTo(0,true);player.playVideo();status.textContent='starting… ♡';};
+</script></body></html>

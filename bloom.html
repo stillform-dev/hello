@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>rose bouquet ♡</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a href="index.html">← back to the garden</a><span>little page #01</span></header>
+<main class="sub"><p class="eyebrow">a bouquet, just because</p><h1>roses for you <em>🌹</em></h1>
+<p class="intro">Tap to add roses to the bouquet. You can never really have too many.</p>
+<div class="bloom bouquet-stage" id="garden"><div class="bouquet bigbouquet" id="bigbouquet"><span class="rose r1">🌹</span><span class="rose r2">🌹</span><span class="rose r3">🌹</span><span class="rose r4">🌹</span><span class="rose r5">🌹</span><span class="leaf l1">❧</span><span class="leaf l2">❧</span><span class="wrap">♡</span><span class="ribbon">🎀</span></div><p id="msg">a little bunch of roses</p></div>
+<button id="grow">add another rose 🌹</button><button class="soft" id="sparkle">sprinkle some sparkle ✨</button><p class="tiny" id="extra">for someone who deserves nice things.</p>
+<a class="next" href="notes.html">next: little things →</a></main>
+<script>
+const garden=document.querySelector('#garden'),msg=document.querySelector('#msg');let n=0;
+document.querySelector('#grow').onclick=()=>{const f=document.createElement('span');f.className='addedrose';f.textContent='🌹';f.style.left=(15+Math.random()*70)+'%';f.style.top=(8+Math.random()*45)+'%';garden.append(f);n++;msg.textContent=['a few more roses for you','okay, this bouquet is getting cute','this is a very respectable amount of roses'][Math.min(n-1,2)];};
+document.querySelector('#sparkle').onclick=()=>{const s=document.createElement('span');s.className='addedrose sparkle';s.textContent=['✨','♡','✧','💗'][Math.floor(Math.random()*4)];s.style.left=(10+Math.random()*80)+'%';s.style.top=(5+Math.random()*55)+'%';garden.append(s);document.querySelector('#extra').textContent='there. a little extra pretty, just for you ♡';};
+</script></body></html>

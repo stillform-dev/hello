@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>one last little thing ♡</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a href="index.html">← back to the roses</a><span>one last thing</span></header><main class="sub cinna-page"><p class="eyebrow">a little cloud friend ☁️</p><h1>you look a lot like <em>this</em></h1>
+<div class="cinna-scene"><span class="float-cloud fc1">☁️</span><span class="float-cloud fc2">☁️</span><span class="float-heart fh1">♡</span><span class="float-heart fh2">✧</span>
+<div class="cinna-card" role="button" tabindex="0" aria-label="Tap Cinnamoroll for a surprise"><div class="cloud">☁️</div><div class="cinna">૮ ˶ᵔ ᵕ ᵔ˶ ა</div><div class="ears">⌒　　⌒</div><div class="cinna-face">૮₍ ˶•⤙•˶ ₎ა</div><div class="tiny-hearts">♡　✧　♡</div><p>cinnamoroll energy 🤍</p><small>tap me!</small><div class="surprise-message" aria-live="polite">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</div></div></div>
+<p class="intro ending">hope this made you smile ♡</p><a class="next" href="index.html">back to the garden 🌹</a></main>
+<script>
+const card=document.querySelector('.cinna-card');let taps=0;const messages=['sending you a tiny cloud hug ☁️','boop! you are very cute ♡','a little sprinkle of happy ✧','hope you smile again today (˶ᵔ ᵕ ᵔ˶)'];
+function pop(){taps++;card.classList.remove('popped');void card.offsetWidth;card.classList.add('popped');card.querySelector('small').textContent='boop! ♡';card.querySelector('.surprise-message').textContent=messages[(taps-1)%messages.length];for(let i=0;i<5;i++){const el=document.createElement('span');el.className='pop-bit';el.textContent=['♡','☁️','✧','૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა'][Math.floor(Math.random()*4)];el.style.left=(15+Math.random()*70)+'%';el.style.top=(20+Math.random()*55)+'%';card.appendChild(el);setTimeout(()=>el.remove(),1200)}}
+card.addEventListener('click',pop);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pop()}});
+</script></body></html>
